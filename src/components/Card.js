@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react'
 import {FaExternalLinkAlt} from "react-icons/fa"
 import {BiSolidUser} from "react-icons/bi"
 
-const Card = ({username, userID}) => {
+const Card = ({
+    username, 
+    userID, 
+    setUserDetailsModalIsVisible,
+    setCurrentUserID,
+}) => {
 
     const [userImage, setUserImage] = useState(null);
     const getUserImage = async () => {
@@ -11,6 +16,11 @@ const Card = ({username, userID}) => {
         const data = await resp.json();
         const image = data.data;
         setUserImage(image.avatar)
+    }
+
+    const handleOpenModal = () => {
+        setCurrentUserID(userID)
+        setUserDetailsModalIsVisible(true)
     }
     useEffect(() => {
         getUserImage();
@@ -25,7 +35,9 @@ const Card = ({username, userID}) => {
                 {username}
             </h3>
             <div className="buttons">
-                <a className='detail-page-link'>
+                <a className='detail-page-link'
+                    onClick={() => handleOpenModal()}
+                >
                     <BiSolidUser></BiSolidUser>
                     <span>see profile</span>
                 </a>

@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import CardList from './components/CardList';
+import UserDatailsModal from './components/UserDatailsModal';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
   const [displayedUser, setDisplayedUser] = useState(null);
   const [filteredUsers, setFilteredUsers] = useState(null);
   const [searchString, setSearchString ] = useState("");
+  const [userDetailsModalIsVisible, setUserDetailsModalIsVisible] = useState(false);
+  const [currentUserID, setCurrentUserID] = useState(null);
 
   const getUsers = async () => {
     const resp = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -31,13 +34,24 @@ function App() {
   useEffect(() => {
     handleFilter();
   }, [searchString])
+
+  useEffect(() => {
+    	console.log(currentUserID);
+  }, [userDetailsModalIsVisible]);
   return (
     <div className="App">
+      {userDetailsModalIsVisible && <UserDatailsModal
+        setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
+        currentUserID={currentUserID}
+      ></UserDatailsModal>}
       <Header searchString={searchString}></Header>
       <HeroSection searchString={searchString} 
         setSearchString={setSearchString}
       ></HeroSection>
-      <CardList filteredUsers={filteredUsers}></CardList>
+      <CardList filteredUsers={filteredUsers}
+        setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
+        setCurrentUserID={setCurrentUserID}
+      ></CardList>
     </div>
   );
 }
