@@ -18,14 +18,10 @@ function App() {
   }
 
   const handleFilter = () => {
-    if (displayedUser){
-      console.log(searchString)
-      let newList = displayedUser.filter(user => {
-        return user.username.toLowerCase().includes(searchString.toLowerCase())
-      })
-      console.log(newList)
-      setFilteredUsers(newList);
-    }
+    let newList = displayedUser?.filter(user => {
+      return user.username.toLowerCase().includes(searchString.toLowerCase())
+    });
+    setFilteredUsers(newList);
   };
 
   useEffect(() => {
