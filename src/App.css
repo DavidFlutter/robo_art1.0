@@ -83,4 +83,49 @@
   border: none;
   border-radius: 5rem;
   width: 30rem;
+}
+
+.Card {
+  width: 20rem;
+  height: 28rem;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 5px rgba(158, 158, 158, 0.591);
+}
+.Card .image-div {
+  width: 100%;
+  height: 80%;
+}
+.Card .image-div img {
+  border-radius: 2rem 2rem 0 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Card .content-div {
+  padding: 0.5rem 2rem;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.Card .content-div h3 {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.2rem;
+}
+.Card .content-div .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+.Card .content-div .buttons a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.Card .content-div .buttons a.detail-page-link {
+  padding-right: 2rem;
+  border-right: 1px solid grey;
 }/*# sourceMappingURL=App.css.map */
