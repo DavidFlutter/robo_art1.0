@@ -1,5 +1,6 @@
 .App {
-  padding-top: 4.6rem;
+  padding-top: 4.4rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .header-wrapper {
@@ -45,7 +46,7 @@
   height: 14rem;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   gap: 1rem;
   position: absolute;
@@ -57,7 +58,7 @@
 .HeroSection .search-tile h2 {
   padding: 0;
   margin: 0;
-  text-align: start;
+  text-align: center;
   color: white;
   font-size: 2.5rem;
 }
@@ -66,6 +67,7 @@
   width: 25rem;
   white-space: wrap;
   font-size: 1.2rem;
+  text-align: center;
 }
 .HeroSection .search-tile form {
   align-self: center;
@@ -75,8 +77,8 @@
   width: 20rem;
 }
 .HeroSection .search-tile form input {
-  font-size: 1.5rem;
-  padding: 0.7rem;
+  font-size: rem;
+  padding: 0.7rem 2rem;
   outline: none;
   border: none;
   border-radius: 5rem;
