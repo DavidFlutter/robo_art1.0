@@ -1,34 +1,47 @@
 import './App.css';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import Card from './components/Card';
+import CardList from './components/CardList';
 import { useEffect, useState } from 'react';
 
 function App() {
 
   const [displayedUser, setDisplayedUser] = useState(null);
-
+  const [filteredUsers, setFilteredUsers] = useState(null);
+  const [searchString, setSearchString ] = useState("");
 
   const getUsers = async () => {
     const resp = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await resp.json();
     setDisplayedUser(users);
+    setFilteredUsers(users)
   }
+
+  const handleFilter = () => {
+    if (displayedUser){
+      console.log(searchString)
+      let newList = displayedUser.filter(user => {
+        return user.username.toLowerCase().includes(searchString.toLowerCase())
+      })
+      console.log(newList)
+      setFilteredUsers(newList);
+    }
+  };
 
   useEffect(() => {
     getUsers();
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    handleFilter();
+  }, [searchString])
   return (
     <div className="App">
-      <Header></Header>
-      <HeroSection></HeroSection>
-      <div className="CardList">
-        {displayedUser && 
-            displayedUser.map(user => (
-              <Card username={user.username} userID={user.id}></Card>
-            ))
-        }
-      </div>
+      <Header searchString={searchString}></Header>
+      <HeroSection searchString={searchString} 
+        setSearchString={setSearchString}
+      ></HeroSection>
+      <CardList filteredUsers={filteredUsers}></CardList>
     </div>
   );
 }

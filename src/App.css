@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
 }
 .header-wrapper header {
   color: white;
@@ -37,7 +38,7 @@
 }
 .HeroSection img {
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -86,7 +87,7 @@
 }
 
 .Card {
-  width: 20rem;
+  min-width: 20rem;
   height: 28rem;
   border-radius: 2rem;
   box-shadow: 3px 3px 5px rgba(158, 158, 158, 0.591);
@@ -128,4 +129,15 @@
 .Card .content-div .buttons a.detail-page-link {
   padding-right: 2rem;
   border-right: 1px solid grey;
+}
+
+.CardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
 }/*# sourceMappingURL=App.css.map */
