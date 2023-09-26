@@ -89,7 +89,7 @@ const UserDatailsModal = ({
                         <span>Phone number</span>: {currentUser.phoneNumber}
                     </p>
                     <p>
-                        <span>Address</span>: {currentUser.address}
+                        <span>Website</span>: {currentUser.address}
                     </p>
                 </div>
                 <h2>Latest post</h2>
