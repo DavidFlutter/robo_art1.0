@@ -46,7 +46,7 @@ function App() {
         <Header searchString={searchString}></Header>
         <Routes>
           {/*Homepage Route */}
-          <Route path='/' element={
+          <Route path='/robo_art1.0' element={
             <>
               {userDetailsModalIsVisible && <UserDatailsModal
                 setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}

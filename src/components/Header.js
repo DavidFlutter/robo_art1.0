@@ -7,12 +7,12 @@ const Header = () => {
   return (
     <div className="header-wrapper">
         <header>
-            <Link to={"/"} className='logo-link'>
+            <Link to={"/robo_art1.0"} className='logo-link'>
               <h1>
                   Robo art
               </h1>
             </Link>
-            <Link to={"/"} className='home-link'>
+            <Link to={"/robo_art1.0"} className='home-link'>
               <AiFillHome></AiFillHome>
             </Link>
         </header>
