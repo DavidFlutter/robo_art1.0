@@ -20,7 +20,7 @@ const UserDatailsModal = ({
     const handleClose = () => {
         setUserDetailsModalIsVisible(false);
     }
-
+    
     const getUser1 = async () => {
         // getting image
         const imageResp = await fetch(`https://reqres.in/api/users/${currentUserID}`);
@@ -71,7 +71,7 @@ const UserDatailsModal = ({
                     <img src={currentUser.image} alt="" />
                     <div className="details">
                         <p>
-                            <span>username</span>: {currentUser.useraname} {currentUserID}
+                            <span>username</span>: {currentUser.useraname} 
                         </p>
                         <p>
                             <span>email</span>: {currentUser.email}

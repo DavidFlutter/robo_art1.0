@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link} from "react-router-dom";
+
 import {FaExternalLinkAlt} from "react-icons/fa"
 import {BiSolidUser} from "react-icons/bi"
 
@@ -41,10 +43,12 @@ const Card = ({
                     <BiSolidUser></BiSolidUser>
                     <span>see profile</span>
                 </a>
-                <a className='portfolio-page-link'>
+                <Link className='portfolio-page-link'
+                    to={`/user/${userID}`}
+                >
                     <FaExternalLinkAlt></FaExternalLinkAlt>
                     <span> see work</span>
-                </a>
+                </Link>
             </div>
         </div>
     </div>

@@ -3,6 +3,8 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import CardList from './components/CardList';
 import UserDatailsModal from './components/UserDatailsModal';
+import PortfolioPage from './pages/PortfolioPage';
+import {BrowserRouter, Routes, Route, Navigate, Link} from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -40,18 +42,33 @@ function App() {
   }, [userDetailsModalIsVisible]);
   return (
     <div className="App">
-      {userDetailsModalIsVisible && <UserDatailsModal
-        setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
-        currentUserID={currentUserID}
-      ></UserDatailsModal>}
-      <Header searchString={searchString}></Header>
-      <HeroSection searchString={searchString} 
-        setSearchString={setSearchString}
-      ></HeroSection>
-      <CardList filteredUsers={filteredUsers}
-        setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
-        setCurrentUserID={setCurrentUserID}
-      ></CardList>
+      <BrowserRouter>
+        <Header searchString={searchString}></Header>
+        <Routes>
+          {/*Homepage Route */}
+          <Route path='/' element={
+            <>
+              {userDetailsModalIsVisible && <UserDatailsModal
+                setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
+                currentUserID={currentUserID}
+              ></UserDatailsModal>}
+              <HeroSection searchString={searchString} 
+                setSearchString={setSearchString}
+              ></HeroSection>
+              <CardList filteredUsers={filteredUsers}
+                setUserDetailsModalIsVisible={setUserDetailsModalIsVisible}
+                setCurrentUserID={setCurrentUserID}
+              ></CardList>
+            </>
+          }></Route>
+
+          {/*PortfolioPage Route*/}
+          <Route path='/user/:id' element={
+            <PortfolioPage></PortfolioPage>
+          }></Route>
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
