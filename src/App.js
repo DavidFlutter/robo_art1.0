@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection';
 import CardList from './components/CardList';
 import UserDatailsModal from './components/UserDatailsModal';
 import PortfolioPage from './pages/PortfolioPage';
-import {BrowserRouter, Routes, Route, Navigate, Link} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 function App() {
