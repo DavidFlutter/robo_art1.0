@@ -339,4 +339,6 @@
   max-width: 60rem;
   background-color: grey;
   border-radius: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=App.css.map */
