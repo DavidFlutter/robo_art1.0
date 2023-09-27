@@ -242,6 +242,17 @@
     }
 }
 
+@media (max-width: 450px) {
+    .UserDatailsModal{
+        .backdrop{
+            .tile{
+                height: 63%;
+                width: 90%;
+            }
+        }
+    }
+}
+
 
 .PortfolioPage{
     padding: 0rem 2rem;
