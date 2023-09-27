@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/robo_art1.0/static/css/main.83b8755f.css",
+    "main.css": "/robo_art1.0/static/css/main.f56144d0.css",
     "main.js": "/robo_art1.0/static/js/main.3da56ed3.js",
     "index.html": "/robo_art1.0/index.html",
-    "main.83b8755f.css.map": "/robo_art1.0/static/css/main.83b8755f.css.map",
+    "main.f56144d0.css.map": "/robo_art1.0/static/css/main.f56144d0.css.map",
     "main.3da56ed3.js.map": "/robo_art1.0/static/js/main.3da56ed3.js.map"
   },
   "entrypoints": [
-    "static/css/main.83b8755f.css",
+    "static/css/main.f56144d0.css",
     "static/js/main.3da56ed3.js"
   ]
 }
